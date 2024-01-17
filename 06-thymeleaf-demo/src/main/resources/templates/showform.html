@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Form</title>
+</head>
+<body>
+<!--    < This form will take contents to resultform in controller studentName is passed as param-->
+<!--    // action to result form will display from req param-->
+<!--    // action to showform will bind with model and display-->
+    <form th:action="@{/upperv2}" method="GET">
+        <input type="text" name="studentName" placeholder="Name?"/>
+        <input type="submit"/>
+    </form>
+</body>
+</html>

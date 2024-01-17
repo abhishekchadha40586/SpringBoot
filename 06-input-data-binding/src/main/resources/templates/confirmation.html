@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p th:text="${student.firstName}"/>
+    <p th:text="${student.lastName}"/>
+    <p th:text="${student.country}"/>
+    <p th:text="${student.language}"/>
+    <ol>
+        <li th:each="tempOs:${student.os}" th:text="${tempOs}"/>
+    </ol>
+</body>
+</html>

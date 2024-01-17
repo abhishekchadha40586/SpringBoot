@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--    // object name should be same as the one set in controller-->
+    <form th:action="@{/processform}" th:object="${student}" method="POST">
+<!--        * is shorthand for ${student.firstName}-->
+        First Name: <input type="text" th:field="*{firstName}">
+        <br><br>
+        Last Name: <input type="text" th:field="*{lastName}">
+        <br><br>
+<!--        The field inside select maps to the student model for the result-->
+<!--        the options map to the countries added in the model-->
+        Country:    <select th:field="*{country}">
+                        <option th:each="tempCountry:${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
+                    </select>
+        <br><br>
+        Language: <input type="radio" th:each="tempLang:${languages}" th:field="*{language}" th:value="${tempLang}" th:text="${tempLang}">
+        <br><br>
+        OS: <input type="checkbox" th:each="tempOs:${os}" th:field="*{os}" th:value="${tempOs}" th:text="${tempOs}">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
